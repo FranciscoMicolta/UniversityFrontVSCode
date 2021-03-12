@@ -1,0 +1,13 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="[ '/instructor-list' ]">Instructor</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+        </ol>
+    </nav>
+
+    <label>Last Name: {{ instructor.LastName }}</label><br/>
+    <label>First Mid Name: {{ instructor.FirstMidName }}</label><br/>
+    <label>Hire Date: {{ instructor.HireDate }}</label><br/>
+</div>

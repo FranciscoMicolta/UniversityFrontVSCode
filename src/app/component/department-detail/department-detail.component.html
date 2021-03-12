@@ -1,0 +1,13 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="[ '/department-list' ]">Department</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+        </ol>
+    </nav>
+
+    <label>Name: {{ department.Name }}</label><br/>
+    <label>Budget: {{ department.Budget }}</label><br/>
+    <label>StartDate: {{ department.StartDate }}</label><br/>
+</div>

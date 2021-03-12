@@ -1,0 +1,44 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="['/course-list']">Courses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Delete</li>
+        </ol>
+    </nav>
+
+    <h2>Delete Course</h2>
+    <hr>
+
+    <div class="form-row" *ngIf="showMsg">
+        <div class="alert alert-{{type}} col-md-12" role="alert">
+            {{msg}}
+        </div>
+    </div>
+
+    <form #courseForm="ngForm" *ngIf="course">
+        <div class="form-row">
+            <div class="col-md-4 form-floating">
+                <input type="text" id="Title" name="Title" placeholder="Enter the Title" class="form-control"
+                    #Title [(ngModel)]="course.Title" autocomplete="off" />
+                <label for="Title">Title</label>
+            </div>
+            <div class="col-md-4 form-floating">
+                <input type="number" id="Credits" name="Credits" placeholder="Enter the number of Credits"
+                    class="form-control" #Credits [(ngModel)]="course.Credits" autocomplete="off" />
+                <label for="Credits">Credits</label>
+            </div>
+        </div>
+        <br>
+
+        <div class="alert alert-danger col-md-12" role="alert">
+            Are You Sure?
+            <br>
+            <div class="btn-group" role="group">
+                <button class="btn btn-outline-danger" (click)="delete()">Yes</button>
+                <a class="btn btn-outline-danger" [routerLink]="[ '/course-list' ]">No</a>
+            </div>
+        </div>
+
+    </form>
+</div>

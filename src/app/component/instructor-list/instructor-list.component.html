@@ -1,0 +1,35 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Instructors</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Index</li>
+        </ol>
+    </nav>
+
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>LastName</td>
+                <td>FirstMidName</td>
+                <td>HireDate</td>
+                <td><a class="btn btn-sm btn-outline-success" [routerLink]="[ '/instructor-create']">Add</a></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let instructor of instructors">
+                <td>{{ instructor.ID }}</td>
+                <td>{{ instructor.LastName }}</td>
+                <td>{{ instructor.FirstMidName }}</td>
+                <td>{{ instructor.HireDate }}</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-info" [routerLink]="[ '/instructor-detail', instructor.ID ]">Details</a>
+                    <a class="btn btn-sm btn-outline-warning" [routerLink]="[ '/instructor-edit', instructor.ID ]">Edit</a>
+                    <a class="btn btn-sm btn-outline-danger" [routerLink]="[ '/instructor-delete', instructor.ID ]">Delete</a>
+                    <a class="btn btn-sm btn-outline-secondary" [routerLink]="[ '/office-instructor-list', instructor.ID ]">Office</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

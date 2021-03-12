@@ -1,0 +1,32 @@
+<div class="container">
+    <br />
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Courses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Index</li>
+        </ol>
+    </nav>
+
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <td>CourseID</td>
+                <td>Title</td>
+                <td>Credits</td>
+                <td><a class="btn btn-sm btn-outline-success" [routerLink]="[ '/course-create']">Add</a></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let course of courses">
+                <td>{{ course.CourseID }}</td>
+                <td>{{ course.Title }}</td>
+                <td>{{ course.Credits }}</td>
+                <td>
+                    <a class="btn btn-sm btn-outline-info" [routerLink]="[ '/course-detail', course.CourseID ]">Detail</a>
+                    <a class="btn btn-sm btn-outline-warning" [routerLink]="[ '/course-edit', course.CourseID ]">Edit</a>
+                    <a class="btn btn-sm btn-outline-danger" [routerLink]="[ '/course-delete', course.CourseID ]">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
